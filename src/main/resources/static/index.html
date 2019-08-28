@@ -14,35 +14,31 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-    <script src="app.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/controller/LoginPageController.js"></script>
+    <script src="app/controller/DashboardPageController.js"></script>
 
 </head>
 
 <body ng-app="myApp">
+<!--    <p><a href="#/!">Main</a></p>
+    <a href="#!red">Red</a>
+    <a href="#!green">Green</a>
+    <a href="#!blue">Blue</a>
+    <a href="#!login">login</a>-->
+    <div ng-view></div>
 
-<p><a href="#/!">Main</a></p>
-
-<a href="#!red">Red</a>
-<a href="#!green">Green</a>
-<a href="#!blue">Blue</a>
-
-<div ng-view></div>
-
-
-<p>Click on the links to navigate to "red.htm", "green.htm", "blue.htm", or back to "main.htm"</p>
-
-
-
-</div>
-<script src="js/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="js/popper.min.js" crossorigin="anonymous"></script>
-<script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
+    </div>
+    <script src="js/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
         });
-    });
-</script>
-</body>
+    </script>
+    </body>
 </html>
