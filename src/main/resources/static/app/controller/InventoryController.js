@@ -1,3 +1,3 @@
-app.controller('InventoryController', function($scope) {
+app.controller('InventoryController', function($scope,$rootScope) {
     $rootScope.pageTitle = "Inventory";
 });
