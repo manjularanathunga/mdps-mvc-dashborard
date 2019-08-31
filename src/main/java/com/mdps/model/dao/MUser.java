@@ -1,4 +1,4 @@
-package com.mdps.model;
+package com.mdps.model.dao;
 
 import javax.persistence.*;
 import java.util.Date;

@@ -3,32 +3,32 @@
     <script src="js/fixed-Header.js"></script>
 </head>
 <div class="container-fluid">
-<!--    <div class="raw">
-        <div class="col-md-12">
-            <h3>Inventory</h3>
-        </div>
-    </div>-->
+    <!--    <div class="raw">
+            <div class="col-md-12">
+                <h3>Inventory</h3>
+            </div>
+        </div>-->
     <div class="container-fluid">
         <div class="raw">
             <div class="col-sm-12">
                 <div class="d-flex justify-content-sm-end">
-<!--                    <div class="input-group col-md-3 input-group-sm form-inline">
-                        <input type="date">
-                    </div>-->
+                    <!--                    <div class="input-group col-md-3 input-group-sm form-inline">
+                                            <input type="date">
+                                        </div>-->
                     <div class="input-group col-md-4 input-group-sm form-inline" ng-init="searchKeyword=''">
-                        <input type="text" class="form-control" ng-model="searchKeyword" placeholder="Search">
+                        <input class="form-control" ng-model="searchKeyword" placeholder="Search" type="text">
                     </div>
-                    <button ng-click="" class="btn-btn-link" data-toggle="tooltip" title="">
-                        <i class="text-warning fa fa-plus" ></i>
+                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="show()" title="">
+                        <i class="text-warning fa fa-plus"></i>
                     </button>
-                    <button ng-click="" class="btn-btn-link" data-toggle="tooltip" title="">
-                        <i class="text-warning fa fa-refresh" ></i>
+                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="" title="">
+                        <i class="text-warning fa fa-refresh"></i>
                     </button>
-                    <button ng-click="" class="btn-btn-link" data-toggle="tooltip" title="">
-                        <i class="text-warning fa fa-history" ></i>
+                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="" title="">
+                        <i class="text-warning fa fa-history"></i>
                     </button>
-                    <button ng-click="" class="btn-btn-link" data-toggle="tooltip" title="">
-                        <i class="text-warning fa fa-upload" ></i>
+                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="" title="">
+                        <i class="text-warning fa fa-upload"></i>
                     </button>
                 </div>
             </div>
@@ -36,36 +36,56 @@
     </div>
 
     <div class="raw view">
-        <div id="parent" class="wrapper table table-sm table-hover table-bordered">
-            <table id="fixTable" class="table">
+        <div class="wrapper table table-sm table-hover table-bordered" id="parent">
+            <table class="table" id="fixTable">
                 <thead class="bg-secondary text-light">
                 <tr>
                     <th>&nbsp;</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
+                    <th>itemNumber</th>
+                    <th>itemName</th>
+                    <th>serialNumber</th>
+                    <th>remarks</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-dblclick="" ng-repeat="inv in inventLst |filter: searchKeyword">
+                <tr ng-repeat="inv in inventLst "> <!--ng-dblclick="" |filter: searchKeyword-->
                     <td>
                         <div class="d-flex justify-content-center">
-                            <button ng-click="" class="btn btn-link btn-sm" data-toggle="tooltip" title="">
+                            <button class="btn btn-link btn-sm" data-toggle="tooltip" ng-click="" title="">
                                 <span class="text-primary"><i class="fa fa-times"></i></span>
                             </button>
                         </div>
                     </td>
+                    <td>
+                        {{inv.itemNumber}}
+                    </td>
+                    <td>
+                        {{inv.itemName}}
+                    </td>
+                    <td>
+                        {{inv.serialNumber}}
+                    </td>
+                    <td>
+                        {{inv.remarks}}
+                    </td>
                 </tr>
                 </tbody>
-
             </table>
-
         </div>
     </div>
-
-
 </div>
+
+<div id="model-inv" class="model fade">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-header">
+            <h3 class="modal-title">Add/Edit Inventory</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+
+    </div>
+</div>
+
+
