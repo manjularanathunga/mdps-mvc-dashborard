@@ -3,218 +3,157 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <title>MDPS Solutions(Pvt)Ltd</title>
+    <link crossorigin="anonymous" href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--<link href="css/footer.css" rel="stylesheet">-->
+    <script crossorigin="anonymous" defer src="js/solid.js"></script>
+    <script crossorigin="anonymous" defer src="js/fontawesome.js"></script>
 
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
-    <!-- Font Awesome JS -->
-    <script defer src="js/solid.js" crossorigin="anonymous"></script>
-    <script defer src="js/fontawesome.js" crossorigin="anonymous"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controller/LoginPageController.js"></script>
+    <script src="app/controller/DashboardPageController.js"></script>
 
 </head>
 
-<body>
-
-<div class="wrapper">
-    <!-- Sidebar  -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h6>MDPS</h6>
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fas fa-align-left"></i>
-                <!--<span>Toggle Sidebar</span>-->
-            </button>
-
-        </div>
-
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-home"></i>
-                    Home
-                </a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-briefcase"></i>
-                    About
-                </a>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-copy"></i>
-                    Pages
-                </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-image"></i>
-                    Portfolio
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-question"></i>
-                    FAQ
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-paper-plane"></i>
-                    Contact
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Page Content  -->
-    <div id="content">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 mx-auto">
-                    <div id="first">
-                        <div class="myform form ">
-                            <div class="logo mb-3">
-                                <div class="col-md-12 text-center">
-                                    <h1>Login</h1>
-                                </div>
-                            </div>
-                            <form action="" method="post" name="login">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Password</label>
-                                    <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
-                                </div>
-                                <div class="form-group">
-                                    <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
-                                </div>
-                                <div class="col-md-12 text-center ">
-                                    <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
-                                </div>
-                                <div class="col-md-12 ">
-                                    <div class="login-or">
-                                        <hr class="hr-or">
-                                        <span class="span-or">or</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <p class="text-center">
-                                        <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
-                                        </i> Signup using Google
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="form-group">
-                                    <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
-                                </div>
-                            </form>
-
-                        </div>
-                    </div>
-                    <div id="second">
-                        <div class="myform form ">
-                            <div class="logo mb-3">
-                                <div class="col-md-12 text-center">
-                                    <h1 >Signup</h1>
-                                </div>
-                            </div>
-                            <form action="#" name="registration">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">First Name</label>
-                                    <input type="text"  name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter Firstname">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Last Name</label>
-                                    <input type="text"  name="lastname" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="Enter Lastname">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Password</label>
-                                    <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
-                                </div>
-                                <div class="col-md-12 text-center mb-3">
-                                    <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
-                                </div>
-                                <div class="col-md-12 ">
-                                    <div class="form-group">
-                                        <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
-                                    </div>
-                                </div>
-                        </div>
-                        </form>
-                    </div>
-                </div>
+<body ng-app="myApp">
+<header>
+    <div class="delay d-flex align-items-center justify-content-center" ng-show="showDelay">
+        <div class="col-sm-4 col-sm-offfset-3">
+            <div class="d-flex flex-row justify-content-center align-items-center text-primary"><i
+                    class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div>
+            <div class="d-flex flex-row justify-content-center align-items-center text-primary">Loading Please wait
+                ....
             </div>
         </div>
-
-        <!--        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-align-justify"></i>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>-->
     </div>
+
+    <div class="overlay"></div>
+
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h6>MDPS</h6>
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <!--<span>Toggle Sidebar</span>-->
+                </button>
+
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        About
+                    </a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        Pages
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-image"></i>
+                        Portfolio
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question"></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+
+
+            <!--        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container-fluid">
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="nav navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>-->
+        </div>
+    </div>
+
+
+</header>
+<p><a href="#/!">Main</a></p>
+<a href="#!red">Red</a>
+<a href="#!green">Green</a>
+<a href="#!blue">Blue</a>
+<a href="#!login">login</a>
+<div class="container-fluid">
+    <div ng-view></div>
 </div>
-
-<!-- jQuery CDN - Slim version (=without AJAX) -->
-<script src="js/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-<!-- Popper.JS -->
-<script src="js/umd/popper.min.js" crossorigin="anonymous"></script>
-<!-- Bootstrap JS -->
-<script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
-
+</div>
+<script crossorigin="anonymous" src="js/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous" src="js/popper.min.js"></script>
+<script crossorigin="anonymous" src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#sidebarCollapse').on('click', function () {
@@ -223,62 +162,4 @@
     });
 </script>
 </body>
-
-
-
-<!-- Site footer -->
-<footer class="site-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <h6>About</h6>
-                <p class="text-justify">mdps.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
-            </div>
-
-            <div class="col-xs-6 col-md-3">
-                <h6>Categories</h6>
-                <ul class="footer-links">
-                    <li><a href="/category/c-language/">C</a></li>
-                    <li><a href="/category/front-end-development/">UI Design</a></li>
-                    <li><a href="/category/back-end-development/">PHP</a></li>
-                    <li><a href="/category/java-programming-language/">Java</a></li>
-                    <li><a href="/category/android/">Android</a></li>
-                    <li><a href="/category/templates/">Templates</a></li>
-                </ul>
-            </div>
-
-            <div class="col-xs-6 col-md-3">
-                <h6>Quick Links</h6>
-                <ul class="footer-links">
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact/">Contact Us</a></li>
-                    <li><a href="/contribute-at-scanfcode/">Contribute</a></li>
-                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="/sitemap/">Sitemap</a></li>
-                </ul>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
-                <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by
-                    <a href="#">MDPS Solutions(Pvt)Ltd</a>.
-                </p>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <ul class="social-icons">
-                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
 </html>
