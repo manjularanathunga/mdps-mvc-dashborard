@@ -75,7 +75,54 @@
     </div>
 </div>
 
-<div id="model-inv" class="model fade">
+<div class="modal fade" id="modal-inv">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form name="form" ng-submit="" role="form">
+                    <div class="raw mt-2">
+                        <div class="col-4">
+                            <div class="raw">
+                                <div class="col-4">
+                                    <label class="font-size-md">Inventory</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" ng-model="itenName">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+    <!--            <div class="raw mt-4">
+                    <div class="table table-sm table-hover table-bordered table-modal-standerd-size">
+
+                    </div>
+                </div>-->
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--
+<div id="modal-inv" class="model fade">
     <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-header">
             <h3 class="modal-title">Add/Edit Inventory</h3>
@@ -87,5 +134,6 @@
 
     </div>
 </div>
+-->
 
 

@@ -13,7 +13,7 @@ app.controller('InventoryController', function($scope,$rootScope, $http, $locati
     }
 
     $scope.show = function(){
-        $("#model-inv").modal("show");
+        $("#modal-inv").modal("show");
 
     }
 
