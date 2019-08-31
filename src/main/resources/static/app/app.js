@@ -1,6 +1,9 @@
 var app = angular.module('myApp',['ngRoute'])
     .run(['$rootScope','$location','$window','$http', function($rootScope,$location,$window,$http){
         $rootScope.presentDate = new Date();
+        $rootScope.mainTitle = "MDPS Solutions(Pvt)Ltd";
+        $rootScope.loggedUser = "Sirmewan M Ranathunga";
+        $rootScope.pageTitle = "-";
 
 /*        $rootScope.currentUserId    = $window.localStorage.getItem('mdbUserId') || false;
         $rootScope.mdbRole          = $window.localStorage.getItem('mdbRole') || false;
@@ -26,6 +29,10 @@ var app = angular.module('myApp',['ngRoute'])
             .when("/", {
                 templateUrl : 'app/view/dashboard.html',
                 controller: 'DashboardPageController'
+            })
+            .when("/inventory", {
+                templateUrl : 'app/view/inventoryPage.html',
+                controller: 'InventoryController'
             })
             .when("/red", {
                 templateUrl : "app/view/red.htm"
