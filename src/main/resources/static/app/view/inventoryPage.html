@@ -8,4 +8,64 @@
             <h3>Inventory</h3>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="raw">
+            <div class="col-sm-12">
+                <div class="d-flex justify-content-sm-end">
+<!--                    <div class="input-group col-md-3 input-group-sm form-inline">
+                        <input type="date">
+                    </div>-->
+                    <div class="input-group col-md-4 input-group-sm form-inline" ng-init="searchKeyword=''">
+                        <input type="text" class="form-control" ng-model="searchKeyword" placeholder="Search">
+                    </div>
+                    <button ng-click="" class="btn-btn-link" data-toggle="tooltip" title="">
+                        <i class="text-warning fa fa-plus" ></i>
+                    </button>
+                    <button ng-click="" class="btn-btn-link" data-toggle="tooltip" title="">
+                        <i class="text-warning fa fa-refresh" ></i>
+                    </button>
+                    <button ng-click="" class="btn-btn-link" data-toggle="tooltip" title="">
+                        <i class="text-warning fa fa-history" ></i>
+                    </button>
+                    <button ng-click="" class="btn-btn-link" data-toggle="tooltip" title="">
+                        <i class="text-warning fa fa-upload" ></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="raw view">
+        <div id="parent" class="wrapper table table-sm table-hover table-bordered">
+            <table id="fixTable" class="table">
+                <thead class="bg-secondary text-light">
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-dblclick="" ng-repeat="inv in inventLst |filter: searchKeyword">
+                    <td>
+                        <div class="d-flex justify-content-center">
+                            <button ng-click="" class="btn btn-link btn-sm" data-toggle="tooltip" title="">
+                                <span class="text-primary"><i class="fa fa-times"></i></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
 </div>
