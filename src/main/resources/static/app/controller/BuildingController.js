@@ -1,10 +1,11 @@
 app.controller('BuildingController', function ($scope, $rootScope, $http, $location, $window) {
-    $rootScope.pageTitle = "Building";
 
+    $rootScope.pageTitle = "Building";
     $scope.itemList = {};
     $scope.item = {};
     $scope.itemDisabled = false;
     $scope.opsType = 'add';
+    $scope.heading = '';
 
     var loadList = function () {
         var res = $http.get("building/getList");
@@ -22,13 +23,13 @@ app.controller('BuildingController', function ($scope, $rootScope, $http, $locat
                 $scope.refresh();
             });
         } else if ($scope.opsType == 'edit') {
-            $scope.item.id = null;
             var res = $http.post("building/save", $scope.item);
             res.then(function (response) {
                 $scope.refresh();
                 //Delay.alert('success',"Record has been updated successfully");
             });
         } else {
+            $scope.item.id = null;
             var res = $http.post("building/save", $scope.item);
             res.then(function (response) {
                 $scope.refresh();
@@ -44,9 +45,12 @@ app.controller('BuildingController', function ($scope, $rootScope, $http, $locat
 
         if (opType == 'delete') {
             $scope.itemDisabled = true;
+            $scope.heading = 'Delete Record';
         } else if (opType == 'edit') {
             $scope.item.dateModified = new Date();
+            $scope.heading = 'Edit Record'
         } else {
+            $scope.heading = 'Add Record'
             $scope.item = emptyItem();
         }
         $("#modal-inv").modal("show");
