@@ -3,6 +3,7 @@ package com.mdps.model.dao;
 import com.mdps.model.enums.InventoryStatus;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /*
 Created by : Sirimewan M Ranathunga
@@ -22,7 +23,12 @@ public class Inventory {
     private String itemName;
     private Long serialNumber;
     private String remarks;
+    private Date dateCreated;
+    private Date dateModified;
+    private Long status;
     //private InventoryStatus invStatus;
+
+
 
 
     public Long getId() {
@@ -65,7 +71,31 @@ public class Inventory {
         this.remarks = remarks;
     }
 
-/*    public InventoryStatus getInvStatus() {
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public Date getDateModified() {
+        return dateModified;
+    }
+
+    public void setDateModified(Date dateModified) {
+        this.dateModified = dateModified;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    /*    public InventoryStatus getInvStatus() {
         return invStatus;
     }
 

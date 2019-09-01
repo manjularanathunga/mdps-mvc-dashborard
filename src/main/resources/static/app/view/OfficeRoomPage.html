@@ -40,33 +40,49 @@
             <table class="table" id="fixTable">
                 <thead class="bg-secondary text-light">
                 <tr>
-                    <th>&nbsp;</th>
-                    <th>itemNumber</th>
-                    <th>itemName</th>
-                    <th>serialNumber</th>
+                    <th>&nbsp</th>
+                    <th>&nbsp</th>
+                    <th>Room #</th>
+                    <th>Name</th>
+                    <th>Building</th>
+                    <th># of People</th>
                     <th>remarks</th>
+                    <th>status</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-repeat="inv in itemList "> <!--ng-dblclick="" |filter: searchKeyword-->
                     <td>
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-link btn-sm" data-toggle="tooltip" ng-click="" title="">
+                            <button class="btn btn-link btn-sm" data-toggle="tooltip" ng-click="" title="Edit">
                                 <span class="text-primary"><i class="fa fa-times"></i></span>
                             </button>
                         </div>
                     </td>
                     <td>
-                        {{inv.itemNumber}}
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-link btn-sm" data-toggle="tooltip" ng-click="" title="Delete">
+                                <span class="text-primary"><i class="fa fa-times"></i></span>
+                            </button>
+                        </div>
                     </td>
                     <td>
-                        {{inv.itemName}}
+                        {{inv.name}}
                     </td>
                     <td>
-                        {{inv.serialNumber}}
+                        {{inv.building.name}}
+                    </td>
+                    <td>
+                        {{inv.roomNumber}}
+                    </td>
+                    <td>
+                        {{inv.noOfPeopleUsedBy}}
                     </td>
                     <td>
                         {{inv.remarks}}
+                    </td>
+                    <td>
+                        {{inv.status}}
                     </td>
                 </tr>
                 </tbody>
@@ -75,7 +91,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-inv">
+<div class="modal fade" id="modal-oroom">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
 

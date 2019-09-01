@@ -1,10 +1,10 @@
-app.controller('InventoryController', function($scope,$rootScope, $http, $location, $window) {
-    $rootScope.pageTitle = "Inventory";
+app.controller('OfficeRoomController', function($scope,$rootScope, $http, $location, $window) {
+    $rootScope.pageTitle = "Building";
 
     $scope.itemList={};
 
     var onLoad = function () {
-        var res = $http.get("inventory/getList");
+        var res = $http.get("officeRoom/getList");
         res.then(function(response) {
             $scope.itemList = response.data;
             //$scope.statuscode = response.status;
@@ -13,7 +13,7 @@ app.controller('InventoryController', function($scope,$rootScope, $http, $locati
     }
 
     $scope.show = function(){
-        $("#modal-inv").modal("show");
+        $("#modal-oroom").modal("show");
 
     }
 

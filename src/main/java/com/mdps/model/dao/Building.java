@@ -1,6 +1,7 @@
 package com.mdps.model.dao;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -13,11 +14,13 @@ public class Building {
     @Column(name = "ID", unique = true)
     private Long id;
     private Long buildingNumber;
-    private String buildingName;
+    private String name;
     private Long noOfRooms;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "building")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "building")
     private List<OfficeRoom> officeRooms;
     private String ownedBy;
+    private Date dateCreated;
+    private Date dateModified;
     private Long status;
 
     public Long getId() {
@@ -36,12 +39,12 @@ public class Building {
         this.buildingNumber = buildingNumber;
     }
 
-    public String getBuildingName() {
-        return buildingName;
+    public String getName() {
+        return name;
     }
 
-    public void setBuildingName(String buildingName) {
-        this.buildingName = buildingName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getNoOfRooms() {
@@ -74,5 +77,21 @@ public class Building {
 
     public void setOfficeRooms(List<OfficeRoom> officeRooms) {
         this.officeRooms = officeRooms;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public Date getDateModified() {
+        return dateModified;
+    }
+
+    public void setDateModified(Date dateModified) {
+        this.dateModified = dateModified;
     }
 }

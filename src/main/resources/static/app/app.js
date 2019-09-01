@@ -34,6 +34,14 @@ var app = angular.module('myApp',['ngRoute'])
                 templateUrl : 'app/view/inventoryPage.html',
                 controller: 'InventoryController'
             })
+            .when("/building", {
+                templateUrl : 'app/view/buildingPage.html',
+                controller: 'BuildingController'
+            })
+            .when("/officeRoomPage", {
+            templateUrl : 'app/view/OfficeRoomPage.html',
+            controller: 'OfficeRoomController'
+        })
             .when("/red", {
                 templateUrl : "app/view/red.htm"
             })
