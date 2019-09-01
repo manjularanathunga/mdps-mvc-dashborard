@@ -72,8 +72,8 @@ app.controller('BuildingController', function ($scope, $rootScope, $http, $locat
             name: null,
             noOfRooms: 0,
             ownedBy: '',
-            dateCreated: null,
-            dateModified: new Date(),
+            dateCreated: new Date(),
+            dateModified: null,
             remarks: '',
             status: 1
         }
