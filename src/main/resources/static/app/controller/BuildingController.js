@@ -1,15 +1,18 @@
 app.controller('BuildingController', function ($scope, $rootScope, $http, $location, $window) {
 
     $rootScope.pageTitle = "Building";
-    $scope.itemList = {};
+    $scope.itemList = [];
     $scope.item = {};
     $scope.itemDisabled = false;
     $scope.opsType = 'add';
     $scope.heading = '';
 
+    var onLoad = function () {
+        loadList();
+    };
+
     var loadList = function () {
-        var res = $http.get("building/getList");
-        res.then(function (response) {
+        $http.get("building/getList").then(function (response) {
             $scope.itemList = response.data;
         });
     };
@@ -60,10 +63,6 @@ app.controller('BuildingController', function ($scope, $rootScope, $http, $locat
         loadList();
         $scope.itemDisabled = false;
         $scope.opsType = 'add';
-    };
-
-    var onLoad = function () {
-        loadList();
     };
 
     var emptyItem = function () {
