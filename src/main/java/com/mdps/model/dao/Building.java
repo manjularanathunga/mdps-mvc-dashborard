@@ -21,6 +21,7 @@ public class Building {
     private String ownedBy;
     private Date dateCreated;
     private Date dateModified;
+    private String remarks;
     private Long status;
 
     public Long getId() {
@@ -55,28 +56,20 @@ public class Building {
         this.noOfRooms = noOfRooms;
     }
 
-    public String getOwnedBy() {
-        return ownedBy;
-    }
-
-    public void setOwnedBy(String ownedBy) {
-        this.ownedBy = ownedBy;
-    }
-
-    public Long getStatus() {
-        return status;
-    }
-
-    public void setStatus(Long status) {
-        this.status = status;
-    }
-
     public List<OfficeRoom> getOfficeRooms() {
         return officeRooms;
     }
 
     public void setOfficeRooms(List<OfficeRoom> officeRooms) {
         this.officeRooms = officeRooms;
+    }
+
+    public String getOwnedBy() {
+        return ownedBy;
+    }
+
+    public void setOwnedBy(String ownedBy) {
+        this.ownedBy = ownedBy;
     }
 
     public Date getDateCreated() {
@@ -93,5 +86,21 @@ public class Building {
 
     public void setDateModified(Date dateModified) {
         this.dateModified = dateModified;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
     }
 }

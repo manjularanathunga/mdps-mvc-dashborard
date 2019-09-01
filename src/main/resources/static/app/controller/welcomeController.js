@@ -1,4 +1,3 @@
-var app = angular.module('myApp', []);
-app.controller('welcomeController', function($scope, $location) {
+app.controller('welcomeController', function($scope,$rootScope, $http, $location, $window) {
     $scope.myUrl = $location.absUrl();
 });
