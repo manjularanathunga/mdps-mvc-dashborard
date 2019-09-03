@@ -68,53 +68,66 @@
                 <h4 class="modal-title">{{heading}}</h4>
                 <button class="close" data-dismiss="modal" type="button">&times;</button>
             </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form name="form" ng-submit="save();" role="form">
-                    <div class="raw">
-                        <div class="col-sm-12">
-                            <div class="raw">
-                                <div class="col-6">
-                                    <div class="col-2">
-                                        <label class="font-size-sm">Building#</label>
-                                    </div>
-                                    <div class="col-4">
-                                        <input ng-disabled="itemDisabled" ng-model="item.buildingNumber" type="number">
-                                    </div>
+            <form name="form" ng-submit="save();" role="form">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="font-size-sm">Building#</label>
                                 </div>
-                                <div class="col-6">
-                                    <div class="col-2">
-                                        <label class="font-size-sm" ng-disabled="itemDisabled">Name</label>
-                                    </div>
-                                    <div class="col-4">
-                                        <input ng-disabled="itemDisabled" ng-model="item.name" type="text">
-                                    </div>
+                                <div class="col-sm-3">
+                                    <input ng-disabled="itemDisabled" ng-model="item.buildingNumber" type="number">
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="col-2">
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="font-size-sm">Name</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input ng-disabled="itemDisabled" ng-model="item.name" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-sm-3">
                                     <label class="font-size-sm"># of Rooms</label>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-sm-3">
                                     <input ng-disabled="itemDisabled" ng-model="item.noOfRooms" type="number">
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="col-2">
-                                    <label class="font-size-sm" ng-disabled="itemDisabled">Remarks</label>
-                                </div>
-                                <div class="col-4">
-                                    <input ng-disabled="itemDisabled" ng-model="item.remarks" type="text">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" data-dismiss="modal" ng-click="save()" type="button">Save</button>
-                    <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
-                </form>
-            </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="font-size-sm">Remarks</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <textarea ng-disabled="itemDisabled" ng-model="item.remarks"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="d-flex justify-content-sm-end">
+                            <button class="btn btn-primary" data-dismiss="modal" ng-click="save()" type="button">Save
+                            </button>&nbsp;
+                            <button class="btn btn-warning" ng-click="clearModal()" type="button">Refresh</button>&nbsp;
+                            <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 </div>
 
 
