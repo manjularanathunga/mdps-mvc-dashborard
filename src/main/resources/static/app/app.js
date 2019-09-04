@@ -38,18 +38,13 @@ var app = angular.module('myApp',['ngRoute'])
                 templateUrl : 'app/view/buildingPage.html',
                 controller: 'BuildingController'
             })
-            .when("/officeRoomPage", {
-            templateUrl : 'app/view/OfficeRoomPage.html',
-            controller: 'OfficeRoomController'
-        })
-            .when("/red", {
-                templateUrl : "app/view/red.htm"
+            .when("/room", {
+                templateUrl : 'app/view/OfficeRoomPage.html',
+                controller: 'OfficeRoomController'
             })
-            .when("/green", {
-                templateUrl : "app/view/green.htm"
-            })
-            .when("/blue", {
-                templateUrl : "app/view/blue.htm"
+            .when("/category", {
+                templateUrl : 'app/view/CategoryPage.html',
+                controller: 'CategoryController'
             })
     }]);
 
