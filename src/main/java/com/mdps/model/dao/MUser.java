@@ -22,6 +22,9 @@ public class MUser {
     private Date dateModified;
     private boolean status;
 
+    public MUser() {
+    }
+
     public Long getId() {
         return id;
     }

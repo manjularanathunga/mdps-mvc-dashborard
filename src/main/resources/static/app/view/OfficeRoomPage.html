@@ -10,16 +10,16 @@
                     <div class="input-group col-md-4 input-group-sm form-inline" ng-init="searchKeyword=''">
                         <input class="form-control" ng-model="searchKeyword" placeholder="Search" type="text">
                     </div>
-                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="show()" title="">
+                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="showUI(null,'add')" title="Add">
                         <i class="text-warning fa fa-plus"></i>
                     </button>
-                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="" title="">
+                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="refresh()" title="Refresh">
                         <i class="text-warning fa fa-refresh"></i>
                     </button>
-                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="" title="">
+                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="" title="History">
                         <i class="text-warning fa fa-history"></i>
                     </button>
-                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="" title="">
+                    <button class="btn-btn-link" data-toggle="tooltip" ng-click="" title="Upload">
                         <i class="text-warning fa fa-upload"></i>
                     </button>
                 </div>
@@ -35,7 +35,7 @@
                     <th>&nbsp;</th>
                     <th>name</th>
                     <th>building</th>
-                    <th>oomNumber</th>
+                    <th>RoomNumber</th>
                     <th>noOfPeopleUsedBy</th>
                     <th>remarks</th>
                     <th>dateCreated</th>
@@ -54,7 +54,7 @@
                         </div>
                     </td>
                     <td>{{itm.name}}</td>
-                    <td>{{itm.building}}</td>
+                    <td>{{itm.buildingName}}</td>
                     <td>{{itm.roomNumber}}</td>
                     <td>{{itm.noOfPeopleUsedBy}}</td>
                     <td>{{itm.remarks}}</td>
@@ -68,7 +68,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-inv">
+<div class="modal fade" id="modal-room">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
 
@@ -77,7 +77,99 @@
                 <h4 class="modal-title">{{heading}}</h4>
                 <button class="close" data-dismiss="modal" type="button">&times;</button>
             </div>
-            <!-- Modal body -->
+            <form name="form" ng-submit="save();" role="form">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="font-size-sm">Room #</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input ng-disabled="itemDisabled" ng-model="item.roomNumber" type="number">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="font-size-sm">Room Name</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input ng-disabled="itemDisabled" ng-model="item.name" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="font-size-sm">noOfPeopleUsedBy</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input ng-disabled="itemDisabled" ng-model="item.noOfPeopleUsedBy" type="number" id="noOfPeopleUsedBy" ng-disabled="itemDisabled">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="font-size-sm">Building</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select class="form-control" id="buildingName" ng-disabled="itemDisabled"
+                                            ng-model="item.buildingName">
+                                        <option ng-repeat="c in buildingList">{{c.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="font-size-sm">Remarks</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <textarea ng-disabled="itemDisabled" ng-model="item.remarks"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="d-flex justify-content-sm-end">
+                            <button class="btn btn-primary" data-dismiss="modal" ng-click="save()" type="button">Save
+                            </button>&nbsp;
+                            <button class="btn btn-warning" ng-click="clearModal()" type="button">Refresh</button>&nbsp;
+                            <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="modal fade" id="modal-room">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            &lt;!&ndash; Modal Header &ndash;&gt;
+            <div class="modal-header">
+                <h4 class="modal-title">{{heading}}</h4>
+                <button class="close" data-dismiss="modal" type="button">&times;</button>
+            </div>
+            &lt;!&ndash; Modal body &ndash;&gt;
             <div class="modal-body">
                 <form name="form" ng-submit="save();" role="form">
                     <div class="raw">
@@ -85,18 +177,21 @@
                             <div class="raw">
                                 <div class="col-6">
                                     <div class="col-2">
-                                        <label class="font-size-sm">Building#</label>
+                                        <label class="font-size-sm">Room Name</label>
                                     </div>
                                     <div class="col-4">
-                                        <input ng-disabled="itemDisabled" ng-model="item.buildingNumber" type="number">
+                                        <input ng-disabled="itemDisabled" ng-model="item.name" type="text">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="col-2">
-                                        <label class="font-size-sm" ng-disabled="itemDisabled">Name</label>
+                                        <label class="font-size-sm" ng-disabled="itemDisabled">Building</label>
                                     </div>
                                     <div class="col-4">
-                                        <input ng-disabled="itemDisabled" ng-model="item.name" type="text">
+                                        <select class="form-control" id="" ng-disabled="itemDisabled"
+                                                ng-model="item.buildingName">
+                                            <option ng-repeat="c in buildingList">{{c.name}}</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -113,17 +208,25 @@
                                     <label class="font-size-sm" ng-disabled="itemDisabled">Remarks</label>
                                 </div>
                                 <div class="col-4">
-                                    <input ng-disabled="itemDisabled" ng-model="item.remarks" type="text">
+                                    <textarea ng-disabled="itemDisabled" ng-model="item.remarks" rows="2"
+                                              type="text"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" data-dismiss="modal" ng-click="save()" type="button">Save</button>
-                    <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+                    <div class="col-sm-12">
+                        <div class="d-flex justify-content-sm-end">
+                            <button class="btn btn-primary" data-dismiss="modal" ng-click="save()" type="button">Save
+                            </button>
+                            <button class="btn btn-warning" ng-click="clearModal()" type="button">Refresh</button>
+                            <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+-->
 
 

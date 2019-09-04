@@ -13,9 +13,8 @@ public class OfficeRoom {
     @Column(name = "ID", unique = true)
     private Long id;
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "building_id")
-    private Building building;
+    private Long buildingId;
+    private String buildingName;
     private Long roomNumber;
     private Long noOfPeopleUsedBy;
     private String remarks;
@@ -39,12 +38,28 @@ public class OfficeRoom {
         this.name = name;
     }
 
-    public Building getBuilding() {
-        return building;
+    public Long getBuildingId() {
+        return buildingId;
     }
 
-    public void setBuilding(Building building) {
-        this.building = building;
+    public void setBuildingId(Long buildingId) {
+        this.buildingId = buildingId;
+    }
+
+    public String getBuildingName() {
+        return buildingName;
+    }
+
+    public void setBuildingName(String buildingName) {
+        this.buildingName = buildingName;
+    }
+
+    public Long getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(Long roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
     public Long getNoOfPeopleUsedBy() {
@@ -63,14 +78,6 @@ public class OfficeRoom {
         this.remarks = remarks;
     }
 
-    public Long getStatus() {
-        return status;
-    }
-
-    public void setStatus(Long status) {
-        this.status = status;
-    }
-
     public Date getDateCreated() {
         return dateCreated;
     }
@@ -87,11 +94,11 @@ public class OfficeRoom {
         this.dateModified = dateModified;
     }
 
-    public Long getRoomNumber() {
-        return roomNumber;
+    public Long getStatus() {
+        return status;
     }
 
-    public void setRoomNumber(Long roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setStatus(Long status) {
+        this.status = status;
     }
 }

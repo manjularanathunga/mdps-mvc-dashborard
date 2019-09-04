@@ -16,8 +16,6 @@ public class Building {
     private Long buildingNumber;
     private String name;
     private Long noOfRooms;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "building")
-    private List<OfficeRoom> officeRooms;
     private String ownedBy;
     private Date dateCreated;
     private Date dateModified;
@@ -54,14 +52,6 @@ public class Building {
 
     public void setNoOfRooms(Long noOfRooms) {
         this.noOfRooms = noOfRooms;
-    }
-
-    public List<OfficeRoom> getOfficeRooms() {
-        return officeRooms;
-    }
-
-    public void setOfficeRooms(List<OfficeRoom> officeRooms) {
-        this.officeRooms = officeRooms;
     }
 
     public String getOwnedBy() {

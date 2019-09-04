@@ -1,7 +1,5 @@
 package com.mdps.model.dao;
 
-import com.mdps.model.enums.InventoryStatus;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -29,7 +27,8 @@ public class Inventory {
     //private InventoryStatus invStatus;
 
 
-
+    public Inventory() {
+    }
 
     public Long getId() {
         return id;
