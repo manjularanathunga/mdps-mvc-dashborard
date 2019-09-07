@@ -35,7 +35,7 @@ public class InventoryController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, headers = "Accept=application/json")
     public Inventory save(@RequestBody Inventory obj){
-        logger.info("Inventory Name : {} " + obj.getItemName() );
+        logger.info("Inventory Name : {} " + obj.getName() );
         return services.save(obj);
     }
 

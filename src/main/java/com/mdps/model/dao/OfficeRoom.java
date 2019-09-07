@@ -13,7 +13,7 @@ public class OfficeRoom {
     @Column(name = "ID", unique = true)
     private Long id;
     private String name;
-    private Long buildingId;
+    //private Long buildingId;
     private String buildingName;
     private Long roomNumber;
     private Long noOfPeopleUsedBy;
@@ -21,6 +21,33 @@ public class OfficeRoom {
     private Date dateCreated;
     private Date dateModified;
     private Long status;
+
+    public OfficeRoom() {
+    }
+
+    public OfficeRoom(String name, String buildingName, Long roomNumber, Long noOfPeopleUsedBy, String remarks, Date dateCreated, Date dateModified, Long status) {
+        this.name = name;
+        this.buildingName = buildingName;
+        this.roomNumber = roomNumber;
+        this.noOfPeopleUsedBy = noOfPeopleUsedBy;
+        this.remarks = remarks;
+        this.dateCreated = dateCreated;
+        this.dateModified = dateModified;
+        this.status = status;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "building_id")
+    private Building building;
+
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
+    }
 
     public Long getId() {
         return id;
@@ -38,13 +65,13 @@ public class OfficeRoom {
         this.name = name;
     }
 
-    public Long getBuildingId() {
+/*    public Long getBuildingId() {
         return buildingId;
     }
 
     public void setBuildingId(Long buildingId) {
         this.buildingId = buildingId;
-    }
+    }*/
 
     public String getBuildingName() {
         return buildingName;
@@ -100,5 +127,21 @@ public class OfficeRoom {
 
     public void setStatus(Long status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "OfficeRoom{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", buildingName='" + buildingName + '\'' +
+                ", roomNumber=" + roomNumber +
+                ", noOfPeopleUsedBy=" + noOfPeopleUsedBy +
+                ", remarks='" + remarks + '\'' +
+                ", dateCreated=" + dateCreated +
+                ", dateModified=" + dateModified +
+                ", status=" + status +
+                ", building=" + building +
+                '}';
     }
 }

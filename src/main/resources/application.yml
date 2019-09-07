@@ -19,11 +19,10 @@ spring:
     generate-ddl: false
 # Logger configuration
 logging:
-  pattern:
-    console: "%d %-5level %logger : %msg%n"
   level:
-    org.springframework: INFO
-    org.hibernate: INFO
+    org :
+      hibernate: info
+      springframework: warn
 # Server configuration
 server:
   port: 8081

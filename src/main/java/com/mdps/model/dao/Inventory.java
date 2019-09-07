@@ -17,18 +17,20 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
     @Column(name = "ID", unique = true)
     private Long id;
-    private String itemNumber;
-    private String itemName;
-    private Long serialNumber;
+    private String number;
+    private String name;
+    private Long serial;
+    @ManyToOne
+    @JoinColumn(name = "building_id")
+    private Category category;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private MUser mUser;
     private String remarks;
     private Date dateCreated;
     private Date dateModified;
     private Long status;
-    //private InventoryStatus invStatus;
 
-
-    public Inventory() {
-    }
 
     public Long getId() {
         return id;
@@ -38,28 +40,44 @@ public class Inventory {
         this.id = id;
     }
 
-    public String getItemNumber() {
-        return itemNumber;
+    public String getNumber() {
+        return number;
     }
 
-    public void setItemNumber(String itemNumber) {
-        this.itemNumber = itemNumber;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getName() {
+        return name;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Long getSerialNumber() {
-        return serialNumber;
+    public Long getSerial() {
+        return serial;
     }
 
-    public void setSerialNumber(Long serialNumber) {
-        this.serialNumber = serialNumber;
+    public void setSerial(Long serial) {
+        this.serial = serial;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public MUser getmUser() {
+        return mUser;
+    }
+
+    public void setmUser(MUser mUser) {
+        this.mUser = mUser;
     }
 
     public String getRemarks() {
@@ -92,24 +110,5 @@ public class Inventory {
 
     public void setStatus(Long status) {
         this.status = status;
-    }
-
-    /*    public InventoryStatus getInvStatus() {
-        return invStatus;
-    }
-
-    public void setInvStatus(InventoryStatus invStatus) {
-        this.invStatus = invStatus;
-    }*/
-
-    @Override
-    public String toString() {
-        return "Inventory{" +
-                "id=" + id +
-                ", itemNumber='" + itemNumber + '\'' +
-                ", itemName='" + itemName + '\'' +
-                ", serialNumber=" + serialNumber +
-                ", remarks='" + remarks + '\'' +
-                '}';
     }
 }

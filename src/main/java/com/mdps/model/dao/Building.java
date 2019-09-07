@@ -2,7 +2,6 @@ package com.mdps.model.dao;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "TBL_BUILDING", schema = "dskdb_v1")
@@ -21,6 +20,9 @@ public class Building {
     private Date dateModified;
     private String remarks;
     private Long status;
+
+    public Building() {
+    }
 
     public Long getId() {
         return id;
@@ -92,5 +94,20 @@ public class Building {
 
     public void setStatus(Long status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Building{" +
+                "id=" + id +
+                ", buildingNumber=" + buildingNumber +
+                ", name='" + name + '\'' +
+                ", noOfRooms=" + noOfRooms +
+                ", ownedBy='" + ownedBy + '\'' +
+                ", dateCreated=" + dateCreated +
+                ", dateModified=" + dateModified +
+                ", remarks='" + remarks + '\'' +
+                ", status=" + status +
+                '}';
     }
 }
